@@ -1,0 +1,504 @@
+\subsection{Problems}
+
+\begin{exercise}
+For each of the following subsets of $\mathbf{F}^3$, determine whether it is a subspace of $\mathbf{F}^3$.
+\begin{enumerate}
+\item[(a)] $X_1=\{(x_1, x_2, x_3) \in \mathbf{F}^3 : x_1 + 2x_2 + 3x_3 = 0\}$
+\item[(b)] $X_2=\{(x_1, x_2, x_3) \in \mathbf{F}^3 : x_1 + 2x_2 + 3x_3 = 4\}$
+\item[(c)] $X_3=\{(x_1, x_2, x_3) \in \mathbf{F}^3 : x_1x_2x_3 = 0\}$
+\item[(d)] $X_4=\{(x_1, x_2, x_3) \in \mathbf{F}^3 : x_1 = 5x_3\}$
+\end{enumerate}
+\end{exercise}
+
+\begin{proof}
+We need to check 3 things.
+\begin{enumerate}
+\item[1)] whether $(0,0,0)$ is in the subspace.
+\item[2)] whether it is closed under vector addition.
+\item[3)] whether it is closed under scalar multiplication.
+\end{enumerate}
+Now, we do this for each of the four sets.
+\begin{enumerate}
+\item[(a)] We know $(0,0,0) \in X_1$ as $0 + 2 \cdot 0 + 3 \cdot 0 = 0$.
+
+Also, if $(x_1, x_2, x_3)$ and $(y_1, y_2, y_3) \in X_1$ then
+\begin{align*}
+& (x_1 + y_1) + 2(x_2 + y_2) + 3(x_3 + y_3) \\
+&= (x_1 + 2x_2 + 3x_3) + (y_1 + 2y_2 + 3y_3) \\
+&= 0 + 0 \\
+&= 0
+\end{align*}
+Also, if $(x_1, x_2, x_3) \in X_1$ and $c \in \mathbb{F}$ then for $c(x_1, x_2, x_3)$ we have
+\begin{align*}
+cx_1 + 2cx_2 + 3cx_3 &= c(x_1 + 2x_2 + 3x_3) \\
+&= c \cdot 0 \\
+&= 0
+\end{align*}
+So, $X_1$ is a subspace.
+\item[(b)] Here, $(0,0,0) \notin X_2$ as $0 + 2 \cdot 0 + 3 \cdot 0 = 0 \neq 4$. So, $X_2$ is not a subspace.
+\item[(c)] Take $(1,1,0)$ and $(0,0,1)$. Both are in $X_3$ as $1 \cdot 1 \cdot 0 = 0$ and $0 \cdot 0 \cdot 1 = 0$. But
+\[
+(1,1,0) + (0,0,1) = (1,1,1) \notin X_3
+\]
+as $1 \cdot 1 \cdot 1 = 1 \neq 0$. So, $X_3$ is not closed under vector addition and hence it is not a subspace.
+\item[(d)] Clearly, $(0,0,0) \in X_4$ as $0 = 5 \cdot 0$.
+
+Also, if $(x_1, x_2, x_3)$ and $(y_1, y_2, y_3) \in X_4$ then $x_1 = 5x_3$ and $y_1 = 5y_3$. Thus,
+\[
+x_1 + y_1 = 5x_3 + 5y_3 = 5(x_3 + y_3)
+\]
+so $(x_1 + y_1, x_2 + y_2, x_3 + y_3) \in X_4$.
+
+Also, if $(x_1, x_2, x_3) \in X_4$ and $c \in \mathbb{F}$ then $cx_1 = c(5x_3) = 5(cx_3)$, so $c(x_1, x_2, x_3) \in X_4$.
+
+So, $X_4$ is a subspace.
+\end{enumerate}
+Thus, $X_1$ and $X_4$ are subspaces of $\mathbb{F}^3$ while $X_2$ and $X_3$ are not.
+\end{proof}
+
+\begin{exercise}
+Verify all assertions given below.
+\begin{enumerate}
+\item[(a)] If $b \in \mathbf{F}$, then
+\[
+X = \{(x_1, x_2, x_3, x_4) \in \mathbf{F}^4 : x_3 = 5x_4 + b\}
+\]
+is a subspace of $\mathbf{F}^4$ if and only if $b = 0$.
+\item[(b)] The set of continuous real-valued functions on the interval $[0, 1]$ is a subspace of $\mathbf{R}^{[0,1]}$.
+\item[(c)] The set of differentiable real-valued functions on $\mathbf{R}$ is a subspace of $\mathbf{R}^{\mathbf{R}}$.
+\item[(d)] The set of differentiable real-valued functions $f$ on the interval $(0, 3)$ such that $f'(2) = b$ is a subspace of $\mathbf{R}^{(0,3)}$ if and only if $b = 0$.
+\item[(e)] The set of all sequences of complex numbers with limit $0$ is a subspace of $\mathbf{C}^{\infty}$.
+\end{enumerate}
+\end{exercise}
+
+\begin{proof} \leavevmode
+\begin{enumerate}
+\item[(a)] Suppose `$X$' is a subspace then $(0,0,0,0)$ is in $X$. So,
+\[
+0 = 5 \cdot 0 + b \implies b = 0
+\]
+Now, suppose $b = 0$ then $X = \{(x_1, x_2, x_3, x_4) \in \mathbb{F}^4 : x_3 = 5x_4\}$. Here, $(0,0,0,0) \in X$ as $0 = 5 \cdot 0$. Also, if $(x_1, x_2, x_3, x_4)$ and $(y_1, y_2, y_3, y_4) \in X$ then
+\[
+x_3 + y_3 = 5x_4 + 5y_4 = 5(x_4 + y_4)
+\]
+so their sum is in $X$. Also, if $c \in \mathbb{F}$ then $cx_3 = c(5x_4) = 5(cx_4)$, so $c(x_1, x_2, x_3, x_4) \in X$. So, $X$ is a subspace if and only if $b = 0$.
+\item[(b)] Let $X$ be the set of continuous real-valued functions on $[0,1]$. It is because the zero function $0(x) = 0$ is continuous (it is constant), the sum of two continuous functions is continuous and if $f$ is continuous then $cf$ is also continuous. To see this, take $f, g \in X$, $c \in \mathbb{R}$ and $a \in [0,1]$. Then,
+\[
+\lim_{x \to a} (f+g)(x) = \lim_{x \to a} f(x) + \lim_{x \to a} g(x) = f(a) + g(a) = (f+g)(a)
+\]
+and
+\[
+\lim_{x \to a} (cf)(x) = c \lim_{x \to a} f(x) = cf(a) = (cf)(a)
+\]
+So, $f+g, cf \in X$ and hence $X$ is a subspace of $\mathbb{R}^{[0,1]}$.
+\item[(c)] Let $X$ be the set of differentiable real-valued functions on $\mathbb{R}$. Similar reasoning as above. The zero function is differentiable with $0' = 0$. Also, if $f, g \in X$ and $c \in \mathbb{R}$ then $f+g$ and $cf$ are differentiable and
+\[
+(f+g)' = f' + g' \;\text{ and }\; (cf)' = cf'
+\]
+So, $X$ is a subspace of $\mathbb{R}^{\mathbb{R}}$.
+\item[(d)] Let $X = \{f : (0,3) \to \mathbb{R} \mid f'(2) = b \text{ and } f \text{ is differentiable}\}$ then, we need to prove $X$ is a subspace of
+$\mathbb{R}^{(0,3)}$ if and only if $b = 0$.
+
+Suppose it is a subspace then, $0 \in X$. Thus, $b = 0'(2) = 0$ (as $0(x) = 0$ is a constant function).
+
+Suppose $b = 0$ then, $0 \in X$ as $0$ is differentiable and $0'(2) = 0$. Also,
+\[
+f'(2) = 0 \; \text{ and }\; g'(2) = 0 \implies (f+g)'(2) = f'(2) + g'(2) = 0
+\]
+Also, $f'(2) = 0 \implies (cf)'(2) = cf'(2) = c \cdot 0 = 0$. Here, $f+g$ and $cf$ are differentiable as well. So, $X$ is a subspace.
+\item[(e)] We know, $\mathbb{C}^{\infty} = \{(x_1, x_2, \ldots) \mid x_i \in \mathbb{C}\}$. Now, let
+\[ L = \{(x_n)_{n=1}^{\infty} \in \mathbb{C}^{\infty} \mid \lim_{n \to \infty} x_n = 0\} \]
+
+Then, $(0,0,\ldots) \in L$. Also if $(x_n)_{n=1}^{\infty} \in L$ and $(z_n)_{n=1}^{\infty} \in L$ then,
+\begin{align*}
+\lim_{n \to \infty} (x_n + z_n) &= \lim_{n \to \infty} x_n + \lim_{n \to \infty} z_n \\
+&= 0 + 0 = 0
+\end{align*}
+Now, if $(x_n)_{n=1}^{\infty} \in L$ and $c \in \mathbb{C}$ then,
+\[
+\lim_{n \to \infty} c x_n = c \lim_{n \to \infty} x_n = c \cdot 0 = 0
+\]
+So, $L$ is a subspace of $\mathbb{C}^{\infty}$.
+\end{enumerate}
+\end{proof}
+
+\begin{exercise}
+Show that the set of differentiable real-valued functions $f$ on the interval $(-4, 4)$ such that $f'(-1) = 3f(2)$ is a subspace of $\mathbf{R}^{(-4,4)}$.
+\end{exercise}
+
+\begin{proof}
+Let $X = \{f : (-4,4) \to \mathbb{R} \mid f'(-1) = 3f(2) \text{ and } f \text{ is diff}^n\}$
+
+Now, we know that $0 \in X$ as $0(x) = 0$ is diff$^n$ and $0'(-1) = 0 = 3 \cdot 0(2)$.
+
+Now, suppose $f$ and $g \in X$ then $f+g$ is diff$^n$ and,
+\begin{align*}
+(f+g)'(-1) &= f'(-1) + g'(-1) \\
+&= 3f(2) + 3g(2) \\
+&= 3(f+g)(2)
+\end{align*}
+Also, if $f \in X$ and $c \in \mathbb{R}$ then $cf$ is diff$^n$ and, $(cf)'(-1) = c f'(-1) = c \cdot 3f(2) = 3(cf)(2)$
+
+So, $X$ is indeed a subspace of $\mathbb{R}^{(-4,4)}$.
+\end{proof}
+
+\begin{exercise}
+Suppose $b \in \mathbf{R}$. Show that the set of continuous real-valued functions $f$ on the interval $[0, 1]$ such that $\int_0^1 f = b$ is a subspace of $\mathbf{R}^{[0,1]}$ if and only if $b = 0$.
+\end{exercise}
+
+\begin{proof}
+Let $X = \{f : [0,1] \to \mathbb{R} \mid \int_0^1 f = b \text{ and } f \text{ is cont}^n\}$ then, suppose $X$ is a subspace then $0 \in X$
+
+Then, $b = \int_0^1 0 = 0$.
+
+Now, suppose $b = 0$ then, it is immediately clear that $0(x) = 0$ is in $X$ as $\int_0^1 0 = 0$ and $0$ is continuous. Also, if $f, g \in X$ then $f+g$ is continuous and
+\[
+\int_0^1 (f+g) = \int_0^1 f + \int_0^1 g = 0 + 0 = 0
+\]
+And, if $c \in \mathbb{R}$ then $cf$ is continuous and
+\[
+\int_0^1 cf = \int_0^1 c \cdot f = c \int_0^1 f = c \cdot 0 = 0
+\]
+So, it is indeed a subspace.
+\end{proof}
+
+\begin{exercise}
+Is $\mathbf{R}^2$ a subspace of the complex vector space $\mathbf{C}^2$?
+\end{exercise}
+
+\begin{proof}
+No. Here, $\mathbb{C}^2$ is a complex vector space so the scalars are from $\mathbb{C}$. Now, $(0,1) \in \mathbb{R}^2$ but
+\[
+i(0,1) = (0,i) \notin \mathbb{R}^2
+\]
+as $i \notin \mathbb{R}$. So, $\mathbb{R}^2$ is not closed under scalar multiplication and hence it is not a subspace of $\mathbb{C}^2$.
+
+Note, if we consider $\mathbb{C}^2$ as a vector space over $\mathbb{R}$ then $\mathbb{R}^2$ is a subspace, as $(0,0) \in \mathbb{R}^2$ and it is closed under addition and under multiplication by real scalars.
+\end{proof}
+
+\begin{exercise}
+\begin{enumerate}
+\item[(a)] Is $\{(a, b, c) \in \mathbf{R}^3 : a^3 = b^3\}$ a subspace of $\mathbf{R}^3$?
+\item[(b)] Is $\{(a, b, c) \in \mathbf{C}^3 : a^3 = b^3\}$ a subspace of $\mathbf{C}^3$?
+\end{enumerate}
+\end{exercise}
+
+\begin{proof}
+For (a) let $X = \{(a,b,c) \in \mathbb{R}^3 \mid a^3 = b^3\}$ then we know,
+\begin{align*}
+& (a - b)(a^2 + ab + b^2) = 0 \\
+& \implies a = b \text{ or } a^2 + ab + b^2 = 0.
+\end{align*}
+Now, if $a^2 + ab + b^2 = 0$ then
+\[
+\left(a + \frac{b}{2}\right)^2 + \frac{3}{4} b^2 = 0 \implies b = 0 \text{ and } a = 0
+\]
+as both the terms are non-negative. So, in either case $a = b$. Also, if $a = b$ then clearly $a^3 = b^3$. Thus,
+\[
+X = \{(a,a,c) \in \mathbb{R}^3\}
+\]
+Now, it is a subspace because $(0,0,0) \in X$
+
+Also, $(a,a,c) + (b,b,d) = (a+b, a+b, c+d) \in X$
+
+and, $k(a,a,c) = (ka, ka, kc) \in X$.
+
+So, $X$ is a subspace of $\mathbb{R}^3$.
+
+Now, for (b) let $X = \{(a,b,c) \in \mathbb{C}^3 \mid a^3 = b^3\}$
+
+Here, $\omega = \frac{-1 + i\sqrt{3}}{2} \in \mathbb{C}$ so that $1 + \omega + \omega^2 = 0$ and $\omega^3 - 1 = (\omega - 1)(\omega^2 + \omega + 1) = 0$, i.e. $\omega^3 = 1$.
+
+Then, $(\omega, 1, 0)$ and $(1, 1, 0) \in X$ because
+\[
+\omega^3 = 1 = 1^3 \text{ and } 1^3 = 1^3
+\]
+But $(\omega, 1, 0) + (1, 1, 0) = (\omega + 1, 2, 0) \notin X$ as,
+\begin{align*}
+(\omega + 1)^3 &= \omega^3 + 1^3 + 3\omega(\omega + 1) = 2 + 3(\omega^2 + \omega) \\
+&= -1 \neq 2^3 = 8
+\end{align*}
+So, $X$ is not closed under addition and hence it is not a subspace of $\mathbb{C}^3$.
+\end{proof}
+
+\begin{exercise}
+Prove or give a counterexample: If $U$ is a nonempty subset of $\mathbf{R}^2$ such that $U$ is closed under addition and under taking additive inverses (meaning $-u \in U$ whenever $u \in U$), then $U$ is a subspace of $\mathbf{R}^2$.
+\end{exercise}
+
+\begin{proof}
+The statement is false. For now, consider $U = \{(a, -a) \mid a \in \mathbb{Z}\}$
+
+Clearly, $U \subseteq \mathbb{R}^2$ and $U$ is nonempty as $(0,0) \in U$. Also, if $(a,-a) \in U$ then $-(a,-a) = (-a,a) \in U$ as $-a \in \mathbb{Z}$. And,
+\[
+(a,-a) + (b,-b) = (a+b, -(a+b)) \in U
+\]
+as $a + b \in \mathbb{Z}$. But, $c(a,-a) = (ca, -ca)$ need not be in $U$. For eg: $(1,-1) \in U$ but
+\[
+\tfrac{1}{2}(1,-1) = \left(\tfrac{1}{2}, -\tfrac{1}{2}\right) \notin U
+\]
+as $\tfrac{1}{2} \notin \mathbb{Z}$. So, $U$ is not closed under scalar multiplication and hence it is not a subspace of $\mathbb{R}^2$.
+\end{proof}
+
+\begin{exercise}
+Give an example of a nonempty subset $U$ of $\mathbf{R}^2$ such that $U$ is closed under scalar multiplication, but $U$ is not a subspace of $\mathbf{R}^2$.
+\end{exercise}
+
+\begin{proof}
+Take the set,
+\[
+U = \{(a,b) \in \mathbb{R}^2 \mid |a| = |b|\}
+\]
+Here,
+\[
+(0,0) \in U, \text{ and if } (a,b) \in U \text{ and } c \in \mathbb{R} \text{ then } |ca| = |c||a| = |c||b| = |cb|
+\]
+so, $(ca, cb) \in U$. But, $U$ is not closed under addition. For eg: $(1,1), (-2,2) \in U$ but
+\[
+(1,1) + (-2,2) = (-1,3) \notin U
+\]
+as $|-1| = 1 \neq 3 = |3|$. So, $U$ is not a subspace of $\mathbb{R}^2$.
+\end{proof}
+
+\begin{exercise}
+A function $f \colon \mathbf{R} \to \mathbf{R}$ is called \defn{periodic} if there exists a positive number $p$ such that $f(x) = f(x + p)$ for all $x \in \mathbf{R}$. Is the set of periodic functions from $\mathbf{R}$ to $\mathbf{R}$ a subspace of $\mathbf{R}^{\mathbf{R}}$? Explain.
+\end{exercise}
+
+\begin{proof}
+No. Let $P$ be the set of periodic functions from $\mathbb{R}$ to $\mathbb{R}$. Take the functions,
+\[
+f(x) = x \bmod \pi, \quad g(x) = x \bmod 1
+\]
+Here, $x \bmod t = x - t\lfloor x/t \rfloor$ for $t > 0$, so $0 \le x \bmod t < t$. Now,
+\[
+f(x + \pi) = x + \pi - \pi\left\lfloor \frac{x}{\pi} + 1 \right\rfloor = x + \pi - \pi\left(\left\lfloor \frac{x}{\pi} \right\rfloor + 1\right) = f(x)
+\]
+and similarly $g(x+1) = g(x)$, so $f, g \in P$.
+
+We claim $f + g \notin P$. Suppose it is, then there is $p > 0$ s.t $(f+g)(x+p) = (f+g)(x)$ for all $x \in \mathbb{R}$. Now, $(f+g)(0) = 0$ so
+\[
+f(p) + g(p) = (f+g)(p) = (f+g)(0) = 0
+\]
+But $f(p) \ge 0$ and $g(p) \ge 0$, so $f(p) = g(p) = 0$. Thus, $p = \pi \lfloor p/\pi \rfloor$ and $p = \lfloor p \rfloor$, i.e. $p = k\pi$ and $p = m$ for some positive integers $k, m$ (as $p > 0$). So,
+\[
+\pi = \frac{m}{k} \in \mathbb{Q}
+\]
+which is a contradiction as $\pi$ is irrational. So, $f + g \notin P$.
+
+Note, $0 \in P$ and $P$ is closed under scalar multiplication (a period of $f$ is also a period of $cf$), so it is only the addition that fails. Thus, $P$ is not a subspace of $\mathbb{R}^{\mathbb{R}}$.
+\end{proof}
+
+\begin{exercise}
+Suppose $V_1$ and $V_2$ are subspaces of $V$. Prove that the intersection $V_1 \cap V_2$ is a subspace of $V$.
+\end{exercise}
+
+\begin{proof}
+Since $0 \in V_1$ and $0 \in V_2$ we have $0 \in V_1 \cap V_2$.
+
+Also, if $a, b \in V_1 \cap V_2$ then $a+b \in V_1$ and $a+b \in V_2$ as both are closed under addition, so $a+b \in V_1 \cap V_2$.
+
+Also, if $a \in V_1 \cap V_2$ and $c \in \mathbb{F}$ then $ca \in V_1$ and $ca \in V_2$ as both are closed under scalar multiplication, so $ca \in V_1 \cap V_2$.
+
+So, $V_1 \cap V_2$ is a subspace of $V$.
+\end{proof}
+
+
+\begin{exercise}
+\label{exp:1.11}
+Prove that the union of two subspaces of $V$ is a subspace of $V$ if and only if one of the subspaces is contained in the other.
+\end{exercise}
+
+\begin{proof}
+Suppose $V_1$ and $V_2$ are subspaces of $V$. Then, let $V_1 \cup V_2$ be a subspace of $V$. Suppose $V_1 \not\subseteq V_2$ and $V_2 \not\subseteq V_1$. Then, $\exists a \in V_2$ s.t $a \notin V_1$ and $\exists b \in V_1$ s.t $b \notin V_2$. Now, $a, b \in V_1 \cup V_2$ so $a + b \in V_1 \cup V_2$ so either $a+b \in V_1$ or $a+b \in V_2$. If $a+b \in V_1$, then $(a+b-b) = a \in V_1$ which is a contradiction as $a \notin V_1$ and if $a+b \in V_2$ then, $(a+b-a) = b \in V_2$ which is a contradiction as $b \notin V_2$. Both of them lead to a contradiction. So, $V_1 \subseteq V_2$ or $V_2 \subseteq V_1$.
+
+Now, suppose $V_1 \subseteq V_2$ s.t $V_1$ and $V_2$ are subspaces. Then, $V_1 \cup V_2 = V_2$ which is a subspace. Similarly, if $V_2 \subseteq V_1$ then $V_1 \cup V_2 = V_1$ which is a subspace.
+\end{proof}
+
+\begin{exercise}
+Prove that the union of three subspaces of $V$ is a subspace of $V$ if and only if one of the subspaces contains the other two.
+\end{exercise}
+
+\begin{proof}
+Suppose $V_1, V_2, V_3$ are subspaces of $V$. First, if one of them contains the other two, say $V_3 \supseteq V_1 \cup V_2$ then $V_1 \cup V_2 \cup V_3 = V_3$ which is a subspace (the other cases are same). That is the trivial direction.
+
+Now, let $V_1 \cup V_2 \cup V_3$ be a subspace of $V$. We have two cases.
+
+\textbf{Case 1:} One of them is contained in the union of the other two, say $V_3 \subseteq V_1 \cup V_2$ (the other cases are same).
+
+Then, $V_1 \cup V_2 \cup V_3 = V_1 \cup V_2$, so $V_1 \cup V_2$ is a subspace and by \ref{exp:1.11} we have $V_1 \subseteq V_2$ or $V_2 \subseteq V_1$. If $V_1 \subseteq V_2$ then $V_3 \subseteq V_1 \cup V_2 = V_2$, so $V_2$ contains $V_1$ and $V_3$. Similarly, if $V_2 \subseteq V_1$ then $V_1$ contains $V_2$ and $V_3$. So, we are done in this case.
+
+\textbf{Case 2:} None of them is contained in the union of the other two. We show that this case is not possible. Now, $V_3 \not\subseteq V_1 \cup V_2$ and $V_2 \not\subseteq V_1 \cup V_3$, so there are $a, b$ s.t
+\begin{align*}
+a &\in V_3, \; a \notin V_1 \cup V_2 \\
+b &\in V_2, \; b \notin V_1 \cup V_3
+\end{align*}
+Now, $a, b \in V_1 \cup V_2 \cup V_3$ and this is a subspace, so $a+b$ and $-a+b$ are in $V_1 \cup V_2 \cup V_3$.
+
+Suppose $a+b \in V_2$ then $(a+b-b) = a \in V_2$ which is a contradiction.
+
+Suppose $a+b \in V_3$ then $(a+b-a) = b \in V_3$ which is a contradiction.
+
+Now, $a+b \in V_1$. Also, $-a+b \in V_1$ because if $-a+b \in V_2$ then
+\[
+(-a+b-b) \in V_2 \implies -a \in V_2 \implies a \in V_2
+\]
+which is a contradiction and if $-a+b \in V_3$ then $(-a+b+a) = b \in V_3$ which is a contradiction.
+
+So, $-a+b \in V_1$ and $a+b \in V_1 \implies (-a+b)+(a+b) = 2b \in V_1 \implies b \in V_1$ as $2 \neq 0$ in $\mathbb{F}$. But $b \notin V_1$, a contradiction. So, Case 2 is not possible and we are done.
+\end{proof}
+
+\begin{exercise}
+Suppose
+\[
+U = \{(x, -x, 2x) \in \mathbf{F}^3 : x \in \mathbf{F}\} \quad \text{and} \quad W = \{(x, x, 2x) \in \mathbf{F}^3 : x \in \mathbf{F}\}.
+\]
+Describe $U + W$ using symbols, and also give a description of $U + W$ that uses no symbols.
+\end{exercise}
+
+\begin{proof}
+Here, as $(x,-x,2x) + (y,y,2y) = (x+y, -x+y, 2(x+y))$ we have
+\[
+U + W = \{(x+y, -x+y, 2(x+y)) \in \mathbb{F}^3 \mid x, y \in \mathbb{F}\}
+\]
+Description,
+
+$U + W$ is the set of all vectors with three coordinates whose 3\textsuperscript{rd} coordinate is twice the 1\textsuperscript{st} coordinate.
+
+Now, let $T = \{(a,b,c) \in \mathbb{F}^3 \mid c = 2a\}$. We show $U + W = T$.
+
+Take $(x+y, -x+y, 2(x+y)) \in U + W$, its 3\textsuperscript{rd} coordinate is $2(x+y)$ which is twice the 1\textsuperscript{st}. So, $U + W \subseteq T$.
+
+Now, take $(a,b,2a) \in T$ and let $x = \frac{a-b}{2}$, $y = \frac{a+b}{2}$. Then,
+\[
+x + y = a, \quad -x + y = b, \quad 2(x+y) = 2a
+\]
+so $(a,b,2a) = (x+y, -x+y, 2(x+y)) \in U + W$. So, $T \subseteq U + W$.
+
+Thus,
+\[
+U + W \subseteq T \;\&\; T \subseteq U + W \implies U + W = T
+\]
+So, the two descriptions above are the same set.
+\end{proof}
+
+\begin{exercise}
+Suppose $U$ is a subspace of $V$. What is $U + U$?
+\end{exercise}
+
+\begin{proof}
+\[
+U + U = \{v_1 + v_2 \mid v_1, v_2 \in U\}
+\]
+Now, let $v \in U + U$. Then, $v = u_1 + u_2$ for some $u_1, u_2 \in U$. Then, $v \in U$ as $U$ is closed under addition. Also, if $v \in U$ then $v = v + 0$ with $v, 0 \in U$.
+
+Thus, $v \in U + U$. Since,
+\[
+U + U \subseteq U \;\&\; U \subseteq U + U \implies U = U + U
+\]
+So, $U + U$ is just $U$ itself.
+\end{proof}
+
+\begin{exercise}
+    \label{ex:1.15}
+Is the operation of addition on the subspaces of $V$ commutative? In other words, if $U$ and $W$ are subspaces of $V$, is $U + W = W + U$?
+\end{exercise}
+
+\begin{proof}
+Yes. Take $a \in U + W$. Then, $a = m + n$ for $m \in U$ and $n \in W$. Now, $a = n + m$ as addition in $V$ is commutative. Thus, $a \in W + U$. Similarly, take $b \in W + U$. Then, $b = i + j$ for some $i \in W$ and $j \in U$. Now, $b = j + i \in U + W$.
+
+Thus,
+\[
+U + W \subseteq W + U \;\&\; W + U \subseteq U + W \implies W + U = U + W.
+\]
+So, addition of subspaces is commutative.
+\end{proof}
+
+\begin{exercise}
+Is the operation of addition on the subspaces of $V$ associative? In other words, if $V_1, V_2, V_3$ are subspaces of $V$, is
+\[
+(V_1 + V_2) + V_3 = V_1 + (V_2 + V_3)?
+\]
+\end{exercise}
+
+\begin{proof}
+Yes. Let $v \in (V_1 + V_2) + V_3$ then
+\[
+v = (v_1 + v_2) + v_3 \text{ for some } v_1 \in V_1, v_2 \in V_2, v_3 \in V_3.
+\]
+$\implies v = v_1 + (v_2 + v_3) \in V_1 + (V_2 + V_3)$ as $v_2 + v_3 \in V_2 + V_3$.
+
+Thus,
+\[
+(V_1 + V_2) + V_3 \subseteq V_1 + (V_2 + V_3)
+\]
+Similarly, let $w \in V_1 + (V_2 + V_3)$ then $w = v_1 + (v_2 + v_3)$ for some $v_1 \in V_1, v_2 \in V_2, v_3 \in V_3$. Now, $w = (v_1 + v_2) + v_3 \in (V_1 + V_2) + V_3$. Thus,
+\[
+V_1 + (V_2 + V_3) \subseteq (V_1 + V_2) + V_3
+\]
+and so,
+\[
+V_1 + (V_2 + V_3) = (V_1 + V_2) + V_3.
+\]
+So, addition of subspaces is associative.
+\end{proof}
+
+\begin{exercise}
+Does the operation of addition on the subspaces of $V$ have an additive identity? Which subspaces have additive inverses?
+\end{exercise}
+
+\begin{proof}
+Yes. Take the zero subspace $\{0\}$. Then, for any subspace $U$ of $V$,
+\[
+U + \{0\} = \{u + 0 \mid u \in U\} = U
+\]
+and $\{0\} + U = U$ by \ref{ex:1.15}. So, $\{0\}$ is an additive identity. Also, it is the only one. If $E$ is also an additive identity then
+\[
+E = \{0\} + E = \{0\}
+\]
+where the first equality is as $\{0\}$ is an additive identity and the second is as $E$ is an additive identity (applied to the subspace $\{0\}$).
+
+Now, suppose $U$ has an additive inverse $W$, i.e. $U + W = \{0\}$. Then, if $u \in U$ we have $u = u + 0 \in U + W = \{0\}$ as $0 \in W$. So, $U \subseteq \{0\}$ and thus $U = \{0\}$. Also, $\{0\} + \{0\} = \{0\}$ so $\{0\}$ is its own additive inverse.
+
+Thus, the only subspace with an additive inverse is $\{0\}$.
+\end{proof}
+
+\begin{exercise}
+    Prove or give counterexample: If $V_1,V_2,U$ are subspaces of $V$ such that
+    \[ V_1 + U = V_2 + U \]
+    then $V_1=V_2$.
+\end{exercise}
+\begin{proof}
+    The statement is false. Take $V=\FF^2$ and
+    \[ V_1=\{(x,0) \mid x \in \FF\}, \quad V_2=\{(0,x) \mid x \in \FF\}, \quad U=\{(-y,y) \mid y \in \FF\}. \]
+    One can easily check that all of them are subspaces.
+
+    Now, let $(a,b) \in \FF^2$. Then
+    \begin{align*}
+        (a,b) &= (a+b,0) + (-b,b) \in V_1+U, \\
+        (a,b) &= (0,a+b) + (a,-a) \in V_2+U,
+    \end{align*}
+    as $(-b,b)$ and $(a,-a)$ lie in $U$ (take $y=b$ and $y=-a$). Since $V_1+U$ and $V_2+U$ are subsets of $\FF^2$, we get
+    \[ V_1+U=\FF^2=V_2+U. \]
+    But $V_1 \neq V_2$, as $(1,0) \in V_1$ whereas $(1,0) \notin V_2$ (every element of $V_2$ has first coordinate $0$). So, the hypothesis holds and the conclusion fails.
+\end{proof}
+
+\begin{exercise}
+    Suppose 
+    \[ U = \{(x,x,y,y) \in \FF^4 \mid x,y \in \FF\} \]
+    Find a subspace $W$ of $\FF^4$ such that $\FF^4 = U \oplus W$. 
+\end{exercise}
+
+\begin{proof}
+    Take the set $W=\{(0,a,b,0) \in \FF^4 \mid a,b \in \FF\}$. Notice that $0 \in W$. Also, 
+    \[ (0,a,b,0)+(0,c,d,0)=(0,a+c,b+d,0) \in W; \]
+    \[ k \cdot (0,a,b,0) = (0,ka,kb,0) \in W \]
+    Thus, the set $W$ is a subspace of $\FF^4$. 
+    Let $\mathbf{v}=(v_1,v_2,v_3,v_4) \in \FF^4$. Then,
+    \[ \mathbf{v}=(v_1,v_1,v_4,v_4)+(0,v_2-v_1,v_3-v_4,0) \in U+W \]
+    Thus, $\FF^4= U+W$. 
+    Now let $\mathbf{v} \in U \cap W$. Since $\mathbf{v} \in U \cap W$, we have $\mathbf{v} \in W$.
+    Thus, \mbox{$\mathbf{v}=(0,v_2,v_3,0)$}, but $\mathbf{v} \in U$ as well, which forces $v_2=0$ and $v_3=0$. Thus, $\mathbf{v}=(0,0,0,0)$. Therefore, $U+W$ is a direct sum via \cref{thm: direct sum iff intersection is zero}.
+\end{proof}
+
+\begin{exercise}
+    
+\end{exercise}

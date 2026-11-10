@@ -1,0 +1,75 @@
+%% =====================================================================
+%%  macros.tex  --  theorem environments and maths shortcuts
+%% =====================================================================
+
+%% ---- Theorem styles --------------------------------------------------
+%% (Palatino has no bold small caps, so a head is bold OR small caps.)
+\newtheoremstyle{statement}   % claims you cite later: bold head, italic body
+  {9pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}{\itshape}{0pt}{\bfseries}{.}{0.5em}{}
+\newtheoremstyle{explain}     % definitions, examples: bold head, upright body
+  {9pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}{\normalfont}{0pt}{\bfseries}{.}{0.5em}{}
+\newtheoremstyle{aside}       % problems, remarks: small-caps head, upright body
+  {9pt plus 2pt minus 2pt}{5pt plus 2pt minus 2pt}{\normalfont}{0pt}{\scshape}{.}{0.5em}{}
+
+%% One shared counter, so "Theorem 1.3" and "Lemma 1.3" can't both exist.
+\theoremstyle{statement}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{explain}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{aside}
+\newtheorem{exercise}{\textcolor{blue}{Exercise}}[section]     % its own numbering: a separate list
+\newtheorem*{remark}{Remark}
+\newtheorem*{notation}{Notation}
+
+\renewcommand{\qedsymbol}{\textcolor{accent}{$\blacksquare$}}
+
+%% amsthm's proof environment, with tighter vertical space to match.
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep=3pt plus 1pt minus 1pt\relax
+  \trivlist
+  \item[\hskip\labelsep\itshape #1\@addpunct{.}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+\makeatother
+
+%% ---- Writing aids ----------------------------------------------------
+\newcommand{\defn}[1]{\textcolor{accent}{\textit{#1}}}      % term being defined
+\renewcommand*{\marginfont}{\normalfont\footnotesize\color{quiet}}
+\newcommand{\mnote}[1]{\marginnote{#1}}                      % aside in the margin
+\newcommand{\todo}[1]{\marginnote{\color{accent}\textsc{to do}\\ #1}}
+
+%% ---- Number systems --------------------------------------------------
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\FF}{\mathbb{F}}
+
+%% ---- Delimiters: \abs{x}  \norm{v}  \inner{u,v}  \set{x \mid x>0}
+%% ---- (starred form, e.g. \norm*{\frac12 v}, grows to fit)
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\inner}{\langle}{\rangle}
+\DeclarePairedDelimiter{\set}{\{}{\}}
+
+%% ---- Operators -------------------------------------------------------
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Span}{span}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\GL}{GL}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\T}{^{\top}}      % A\T       transpose
+\newcommand{\inv}{^{-1}}      % A\inv     inverse

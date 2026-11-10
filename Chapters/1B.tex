@@ -1,0 +1,194 @@
+\section{Vector Spaces}
+\begin{definition}
+    A \defn{vector space} over a field $\FF$ is a set $V$ with an addition and a scalar multiplication such that, $\forall u,v,w \in V$
+    and $\forall a,b \in \FF$ we have
+    \begin{enumerate}
+        \item $u+w=w+u$;
+        \item $(u+w)+v=u+(w+v)$;
+        \item $\exists 0 \in V$ such that $v+0=v$;
+        \item $\exists -v$ for all $v$ such that $v+(-v)=0$;
+        \item $1v=v$ and $a(bv)=(ab)v$;
+        \item $a(u+v)=au+av$ and $(a+b)u=au+bv$
+    \end{enumerate}
+\end{definition}
+
+\begin{notation}
+    For all $w,v \in V$ we have $w+(-v) := w-v$.
+\end{notation}
+
+\begin{notation}
+    $V$ denotes a vector space over $\FF$, unless otherwise stated.
+\end{notation}
+
+\begin{example}
+$\RR^n$ is a vector space over $\RR$. 
+\end{example}
+
+\begin{example}
+$\CC^n$ is a vector space over $\CC$ and $\RR$.
+\end{example}
+    
+\begin{example}
+$\FF^n$ is a vector space over $\FF$.
+\end{example}
+
+\begin{notation}
+    $\FF^{\infty} = \set{(x_1,x_2,\ldots) \mid x_i \in \FF \text{ for } k = 1,2,\ldots}$
+\end{notation}
+
+\begin{notation}
+    Let $\FF^S$ be the set of functions from $S \to F$. Then,
+    \begin{enumerate}
+        \item For $f,g \in \FF^S$, the \defn{sum} $f+g \in \FF^S$ is defined as 
+                    \[ (f+g)(x) = f(x)+g(x) \quad \forall x \in V \]
+        \item For $f \in \FF^S$, the \defn{scalar multiplication} $\lambda f \in \FF^S$ is defined as
+                    \[ (\lambda f)(x) = \lambda \cdot f(x) \quad \forall x \in V \]
+    \end{enumerate}
+\end{notation}
+
+\begin{example}
+    $\FF^S$ is a vector space over $\FF$.
+\end{example}
+
+\begin{theorem}
+    \label{thm:unique additive identity}
+    A vector space has a \defn{unique} additive identity.
+\end{theorem}
+
+\begin{proof}
+    Suppose $0$ and $0'$ are both additive inverses of a vector space $V$. Then,
+    \[ 0 = 0+0' = 0'\] 
+\end{proof}
+
+\begin{theorem}
+    \label{thm:unique additive inverses}
+    Every vector space has a \defn{unique} additive inverse.
+\end{theorem}
+
+\begin{proof}
+    Suppose $w_1$ and $w_2$ are additive inverses of $v$. Then,
+    \[ w_1=w_1+0 =w_1+(v+w_2)=(w_1+v)+w_2=0+w_2=w_2  \] 
+\end{proof}
+
+\begin{lemma}
+    For all $v \in V$, we have $0v = 0$.
+\end{lemma}
+
+\begin{proof}
+    $0v=(0+0)v=0v+0v \Rightarrow 0v+0v-0v=0v-0v \Rightarrow 0v=0$.
+\end{proof}
+
+\begin{lemma}
+    For every $a \in \FF$ we have $a0=0$
+\end{lemma}
+
+\begin{proof}
+    $a0=a(0+0)=a0 + a0 \Rightarrow a0+a0-a0=a0-a0 \Rightarrow a0 = 0$.
+\end{proof}
+
+\begin{lemma}
+    For all $v \in V$, we have $(-1)v=-v$.
+\end{lemma}
+
+\begin{proof}
+    We know that,
+    \[ 0=0v=(1-1)v=1v+(-1)v=v+(-1)v \Rightarrow 0-v=v+(-1)v-v \]
+    \[ \Rightarrow -v=(-1)v \]
+\end{proof}
+
+\begin{definition}[Subspace]
+    A subset $U$ of $V$ is called a $\defn{subspace}$ of $V$ if $U$ is also a vector space with the same additive identity, addition, and
+    scalar multiplication as on V.
+\end{definition}
+
+\begin{theorem}
+    \label{thm:subgroup criterion}
+    A subset $U$ of $V$ is a subspace of $V$ if and only if $U$ satisfies the following three condition.
+    \begin{enumerate}
+        \item $0 \in U$
+        \item $u,w \in U$ then $u+w \in U$
+        \item $u \in U$ then $\lambda u \in U$ for all $\lambda \in \FF$.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}
+    Suppose $(\Rightarrow)$ $U$ is a subspace then all of the things mentioned above automatically follow.
+    
+    Suppose $(\Leftarrow)$ $U$ is a subset that satisfies those $3$ condition. Then we can quickly check the vector axioms to verify
+    $U$ is indeed a vector space. Thus, $U$ is a subspace of $V$.
+\end{proof}
+
+\begin{example}
+    The set $\set{(a,b,5c,c) \in \FF^4 \mid a,b,c \in \FF}$ is a subspace of $\FF^4$.
+\end{example}
+\begin{definition}[sum of vector spaces]
+    Suppose $V_1,\ldots,V_m$ are subspaces of $V$. The \defn{sum} of $V_1,\ldots, V_m$ denoted by $V_1+\cdots+V_m$ is 
+    defined as
+    \[ V_1 + \cdots + V_m := \set{v_1 + \cdots + v_m \mid v_1 \in V_1,\ldots,v_m \in V_m} \] 
+\end{definition}
+
+\begin{example}
+    If $U = \set{(x,0) \in \FF^2 \mid x \in \FF }$ and $W=\set{(0,y) \in \FF^2 \mid y \in \FF}$ then
+    \[ U+W = \set{(x,y) \in \FF^2 \mid x,y \in \FF} \]
+\end{example}
+
+\begin{theorem}
+    \label{thm:direct sum is the smallest subspace}
+    Suppose $V_1,\ldots,V_m$ are the subspaces of $V$. Then $V_1 + \cdots + V_m$ is the smallest subspace of $V$ containing 
+    $V_1,\ldots,V_m$.
+\end{theorem}
+
+\begin{proof}
+    It is easy to see that $V_1 + \cdots + V_m$ is a vector space. We prove it is the smallest subspace of $V$ containing $V_1,\ldots,V_m$
+    by arguing that if there exists any other vector space $W$, containing $V_1,\ldots,V_m$ then $V_1+\cdots + V_m \subseteq W$. 
+
+    Let $v_1 \in V_1,\ldots,v_m \in V_m$. Since $W$ contains $V_1,\ldots,V_m$ it must contain $v_1,\ldots,v_m$ hence their sum.
+    Thus, $V_1+\ldots+V_m \in W$.
+\end{proof}
+
+\begin{definition}[direct sum]
+    Suppose $V_1,\ldots,V_m$ is a subspace of $V$. Then the sum $V_1+V_2+\cdots+V_m$ is called \defn{direct sum} if and only if 
+    each element of the sum can be written in only one way as a sum $v_1+\cdots+v_m$ where each $v_k \in V_k$. 
+\end{definition}
+
+\begin{notation}
+    If $V_1+\cdots+V_m$ is a direct sum then we write it as $V_1 \oplus \cdots \oplus V_m$. 
+\end{notation}
+
+\begin{example}
+    Let $V_k = \set{(0,\ldots,\underbrace{x_k}_{\text{k}^{th} \text{slot}},\ldots) \in \FF^n \mid x_k \in \FF}$. Then, $V_k$ is a subspace
+    of $\FF^n$. Also,
+    \[ \FF^n = V_1 \oplus \cdots \oplus V_n \]
+\end{example}
+
+\begin{theorem}
+    \label{thm:direct sum iff zero can be written as sum of zero}
+    Suppose $V_1,\ldots,V_m$ are subspaces of $V$. Then $V_1 \oplus \cdots \oplus V_m$ if and only if the only way to write $0$ as a sum 
+    $v_1+\ldots+v_m$, where each $v_k \in V_k$, is by taking each $v_k=0$.
+\end{theorem}
+
+\begin{proof}
+    Suppose $V_1 + \ldots + V_k$ is a direct sum. Then, $0$ can be only written in one way that is
+    \[ 0 = \underbrace{0+0+\cdots+0}_{n} \]
+    Suppose  the only way to write $0$ is by adding other $0$'s. Assume on the contrary that $V_1 + \cdots + V_m$ is not a direct sum.
+    Then, $\exists v$ such that it can be written in two different ways,
+    \[ v= v_1 + \cdots + v_n = u_1 + \cdots + u_n \]
+    \[ \implies (v_1-u_1)+(v_2-u_2)+ \cdots + (v_n-u_n)=0 \]
+    By our assumption that $0$ can only be written in one way, we have $v_i-u_i=0 \Rightarrow v_i = u_i$ for $1 \le i \le n$.
+\end{proof}
+
+\begin{theorem}
+    \label{thm: direct sum iff intersection is zero}
+    Suppose $U$ and $W$ are subspaces of $V$. Then, 
+    \[ U \oplus W \iff U \cap W = \set{0} \]
+\end{theorem}
+
+\begin{proof}
+    Suppose $U \oplus W$ and $U \cap W \neq \{0\}$. Take a non zero $z \in U \cap W$. But 
+    \[ z = z + 0 = 0 + z \]
+    which violates the assumption $U + W$ is a direct sum. Thus, $\nexists z \in U \cap W$ such that $z = 0$.
+    Since, $0 \in W$ and $0 \in U$ we have $U \cap W = \set{0}$.
+
+    Suppose $U \cap W = \{0\}$ and $U + W$ is not a direct sum. Since it is not a direct sum, let us write
+    $0 = u+w$ for some $u \in U,w \in W$. But that implies $u=-w$ which implies $u=w=0$ due to our assumption.
+    Thus, the only way to write out $0$ is as sum of other $0$s, which violates \cref{thm:direct sum iff zero can be written as sum of zero}.
+\end{proof}

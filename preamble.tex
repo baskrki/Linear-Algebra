@@ -1,0 +1,98 @@
+%% =====================================================================
+%%  preamble.tex  --  how the notes LOOK.   (maths shortcuts: macros.tex)
+%%  Assumes  \documentclass[11pt,reqno,oneside]{amsart}  and that main.tex
+%%  defines \notetitle and \noteauthor before this file is input.
+%% =====================================================================
+
+%% ---- Type ------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[sc]{mathpazo}            % Palatino text + maths, real small caps
+\linespread{1.05}                    % Palatino runs tight; this is the usual cure
+\usepackage{microtype}               % margin kerning + font expansion
+
+%% ---- Maths -----------------------------------------------------------
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\numberwithin{equation}{section}     % (1.3) instead of one global counter
+
+%% ---- Page ------------------------------------------------------------
+%% ~75 characters a line (was ~95).  The space this frees on the right is a
+%% margin column for \mnote{..} and \todo{..}.  For a plain full-width page:
+%%   \usepackage[a4paper, margin=1in, headheight=15pt, footskip=0.4in]{geometry}
+\usepackage[a4paper, top=1in, bottom=1in, left=1in, right=1.5in,
+            marginparwidth=1.6in, marginparsep=0.3in,
+            headheight=15pt, footskip=0.4in]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 1pt minus 1pt}   % without this, paragraphs run together
+
+%% ---- Colour: one quiet accent, one ink for links ----------------------
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{8A2F2F}   % oxblood
+\definecolor{ink}{HTML}{2C3E6B}      % links
+\definecolor{quiet}{gray}{0.40}      % margin notes
+
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{positioning}
+\usepackage{marginnote}
+\usepackage{fancyhdr}
+% \usepackage{subfiles}
+
+%% ---- Links -----------------------------------------------------------
+\usepackage[colorlinks=true, linkcolor=ink, urlcolor=ink, citecolor=ink]{hyperref}
+\hypersetup{pdftitle={\notetitle}, pdfauthor={\noteauthor}}
+\usepackage{bookmark}
+\usepackage[capitalise,noabbrev]{cleveref}   % \cref{thm:x} -> "Theorem 1.2"
+\crefformat{equation}{(#2#1#3)}              % \cref{eq:x}  -> "(1.2)"
+
+%% ---- Headings: flush left, numbers hang in the left margin ------------
+%% (built on amsart's own hooks; titlesec breaks amsart's contents page)
+\makeatletter
+\DeclareRobustCommand{\hangnum}[1]{\llap{\textcolor{accent}{#1}\hspace{0.9em}}}
+\renewcommand{\@seccntformat}[1]{\hangnum{\csname the#1\endcsname}}
+\renewcommand{\section}{\@startsection{section}{1}{\z@}%
+  {2.2\linespacing \@plus .6\linespacing \@minus .3\linespacing}{.6\linespacing}%
+  {\normalfont\Large\scshape\raggedright}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+  {1.6\linespacing \@plus .4\linespacing \@minus .2\linespacing}{.4\linespacing}%
+  {\normalfont\Large\itshape\raggedright}}
+
+%% ---- Title block: flush left, small caps; contents heading to match ---
+\renewcommand{\@settitle}{%
+  \begin{flushleft}
+    \baselineskip14\p@\relax
+    \scshape\LARGE\@title
+  \end{flushleft}}
+\renewcommand{\@setauthors}{%
+  \begin{flushleft}
+    \itshape\large\authors
+  \end{flushleft}}
+\renewcommand{\contentsnamefont}{\raggedright\Large\scshape}
+\makeatother
+
+%% ---- Running head: title left, current section right; no footer rule ---
+\pagestyle{fancy}
+\fancyhf{}
+%% amsart never calls \sectionmark, so hook it in where it writes the contents entry.
+\makeatletter
+\let\@amsart@tocwrite\@tocwrite
+\renewcommand{\@tocwrite}[2]{%
+  \@amsart@tocwrite{#1}{#2}%
+  \@ifundefined{#1mark}{}{\csname #1mark\endcsname{#2}}}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\ifx\@secnumber\@empty\else\ \fi #1}}
+\let\subsectionmark\@gobble      % head follows sections only (fancyhdr would also follow subsections)
+\makeatother
+\fancyhead[L]{\small\scshape\notetitle}
+\fancyhead[R]{\small\scshape \rightmark}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%% ---- Contents: no paragraph gaps between entries ----------------------
+\makeatletter
+\let\@origtableofcontents\tableofcontents
+\renewcommand{\tableofcontents}{{\setlength{\parskip}{0pt}\@origtableofcontents}}
+\makeatother
