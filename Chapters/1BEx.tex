@@ -28,7 +28,7 @@ Also, if $(x_1, x_2, x_3)$ and $(y_1, y_2, y_3) \in X_1$ then
 &= 0 + 0 \\
 &= 0
 \end{align*}
-Also, if $(x_1, x_2, x_3) \in X_1$ and $c \in \mathbb{F}$ then for $c(x_1, x_2, x_3)$ we have
+Also, if $(x_1, x_2, x_3) \in X_1$ and $c \in \FF$ then for $c(x_1, x_2, x_3)$ we have
 \begin{align*}
 cx_1 + 2cx_2 + 3cx_3 &= c(x_1 + 2x_2 + 3x_3) \\
 &= c \cdot 0 \\
@@ -49,11 +49,11 @@ x_1 + y_1 = 5x_3 + 5y_3 = 5(x_3 + y_3)
 \]
 so $(x_1 + y_1, x_2 + y_2, x_3 + y_3) \in X_4$.
 
-Also, if $(x_1, x_2, x_3) \in X_4$ and $c \in \mathbb{F}$ then $cx_1 = c(5x_3) = 5(cx_3)$, so $c(x_1, x_2, x_3) \in X_4$.
+Also, if $(x_1, x_2, x_3) \in X_4$ and $c \in \FF$ then $cx_1 = c(5x_3) = 5(cx_3)$, so $c(x_1, x_2, x_3) \in X_4$.
 
 So, $X_4$ is a subspace.
 \end{enumerate}
-Thus, $X_1$ and $X_4$ are subspaces of $\mathbb{F}^3$ while $X_2$ and $X_3$ are not.
+Thus, $X_1$ and $X_4$ are subspaces of $\FF^3$ while $X_2$ and $X_3$ are not.
 \end{proof}
 
 \begin{exercise}
@@ -77,12 +77,12 @@ is a subspace of $\mathbf{F}^4$ if and only if $b = 0$.
 \[
 0 = 5 \cdot 0 + b \implies b = 0
 \]
-Now, suppose $b = 0$ then $X = \{(x_1, x_2, x_3, x_4) \in \mathbb{F}^4 : x_3 = 5x_4\}$. Here, $(0,0,0,0) \in X$ as $0 = 5 \cdot 0$. Also, if $(x_1, x_2, x_3, x_4)$ and $(y_1, y_2, y_3, y_4) \in X$ then
+Now, suppose $b = 0$ then $X = \{(x_1, x_2, x_3, x_4) \in \FF^4 : x_3 = 5x_4\}$. Here, $(0,0,0,0) \in X$ as $0 = 5 \cdot 0$. Also, if $(x_1, x_2, x_3, x_4)$ and $(y_1, y_2, y_3, y_4) \in X$ then
 \[
 x_3 + y_3 = 5x_4 + 5y_4 = 5(x_4 + y_4)
 \]
-so their sum is in $X$. Also, if $c \in \mathbb{F}$ then $cx_3 = c(5x_4) = 5(cx_4)$, so $c(x_1, x_2, x_3, x_4) \in X$. So, $X$ is a subspace if and only if $b = 0$.
-\item[(b)] Let $X$ be the set of continuous real-valued functions on $[0,1]$. It is because the zero function $0(x) = 0$ is continuous (it is constant), the sum of two continuous functions is continuous and if $f$ is continuous then $cf$ is also continuous. To see this, take $f, g \in X$, $c \in \mathbb{R}$ and $a \in [0,1]$. Then,
+so their sum is in $X$. Also, if $c \in \FF$ then $cx_3 = c(5x_4) = 5(cx_4)$, so $c(x_1, x_2, x_3, x_4) \in X$. So, $X$ is a subspace if and only if $b = 0$.
+\item[(b)] Let $X$ be the set of continuous real-valued functions on $[0,1]$. It is because the zero function $0(x) = 0$ is continuous (it is constant), the sum of two continuous functions is continuous and if $f$ is continuous then $cf$ is also continuous. To see this, take $f, g \in X$, $c \in \RR$ and $a \in [0,1]$. Then,
 \[
 \lim_{x \to a} (f+g)(x) = \lim_{x \to a} f(x) + \lim_{x \to a} g(x) = f(a) + g(a) = (f+g)(a)
 \]
@@ -90,14 +90,14 @@ and
 \[
 \lim_{x \to a} (cf)(x) = c \lim_{x \to a} f(x) = cf(a) = (cf)(a)
 \]
-So, $f+g, cf \in X$ and hence $X$ is a subspace of $\mathbb{R}^{[0,1]}$.
-\item[(c)] Let $X$ be the set of differentiable real-valued functions on $\mathbb{R}$. Similar reasoning as above. The zero function is differentiable with $0' = 0$. Also, if $f, g \in X$ and $c \in \mathbb{R}$ then $f+g$ and $cf$ are differentiable and
+So, $f+g, cf \in X$ and hence $X$ is a subspace of $\RR^{[0,1]}$.
+\item[(c)] Let $X$ be the set of differentiable real-valued functions on $\RR$. Similar reasoning as above. The zero function is differentiable with $0' = 0$. Also, if $f, g \in X$ and $c \in \RR$ then $f+g$ and $cf$ are differentiable and
 \[
 (f+g)' = f' + g' \;\text{ and }\; (cf)' = cf'
 \]
-So, $X$ is a subspace of $\mathbb{R}^{\mathbb{R}}$.
-\item[(d)] Let $X = \{f : (0,3) \to \mathbb{R} \mid f'(2) = b \text{ and } f \text{ is differentiable}\}$ then, we need to prove $X$ is a subspace of
-$\mathbb{R}^{(0,3)}$ if and only if $b = 0$.
+So, $X$ is a subspace of $\RR^{\RR}$.
+\item[(d)] Let $X = \{f : (0,3) \to \RR \mid f'(2) = b \text{ and } f \text{ is differentiable}\}$ then, we need to prove $X$ is a subspace of
+$\RR^{(0,3)}$ if and only if $b = 0$.
 
 Suppose it is a subspace then, $0 \in X$. Thus, $b = 0'(2) = 0$ (as $0(x) = 0$ is a constant function).
 
@@ -106,19 +106,19 @@ Suppose $b = 0$ then, $0 \in X$ as $0$ is differentiable and $0'(2) = 0$. Also,
 f'(2) = 0 \; \text{ and }\; g'(2) = 0 \implies (f+g)'(2) = f'(2) + g'(2) = 0
 \]
 Also, $f'(2) = 0 \implies (cf)'(2) = cf'(2) = c \cdot 0 = 0$. Here, $f+g$ and $cf$ are differentiable as well. So, $X$ is a subspace.
-\item[(e)] We know, $\mathbb{C}^{\infty} = \{(x_1, x_2, \ldots) \mid x_i \in \mathbb{C}\}$. Now, let
-\[ L = \{(x_n)_{n=1}^{\infty} \in \mathbb{C}^{\infty} \mid \lim_{n \to \infty} x_n = 0\} \]
+\item[(e)] We know, $\CC^{\infty} = \{(x_1, x_2, \ldots) \mid x_i \in \CC\}$. Now, let
+\[ L = \{(x_n)_{n=1}^{\infty} \in \CC^{\infty} \mid \lim_{n \to \infty} x_n = 0\} \]
 
 Then, $(0,0,\ldots) \in L$. Also if $(x_n)_{n=1}^{\infty} \in L$ and $(z_n)_{n=1}^{\infty} \in L$ then,
 \begin{align*}
 \lim_{n \to \infty} (x_n + z_n) &= \lim_{n \to \infty} x_n + \lim_{n \to \infty} z_n \\
 &= 0 + 0 = 0
 \end{align*}
-Now, if $(x_n)_{n=1}^{\infty} \in L$ and $c \in \mathbb{C}$ then,
+Now, if $(x_n)_{n=1}^{\infty} \in L$ and $c \in \CC$ then,
 \[
 \lim_{n \to \infty} c x_n = c \lim_{n \to \infty} x_n = c \cdot 0 = 0
 \]
-So, $L$ is a subspace of $\mathbb{C}^{\infty}$.
+So, $L$ is a subspace of $\CC^{\infty}$.
 \end{enumerate}
 \end{proof}
 
@@ -127,7 +127,7 @@ Show that the set of differentiable real-valued functions $f$ on the interval $(
 \end{exercise}
 
 \begin{proof}
-Let $X = \{f : (-4,4) \to \mathbb{R} \mid f'(-1) = 3f(2) \text{ and } f \text{ is diff}^n\}$
+Let $X = \{f : (-4,4) \to \RR \mid f'(-1) = 3f(2) \text{ and } f \text{ is diff}^n\}$
 
 Now, we know that $0 \in X$ as $0(x) = 0$ is diff$^n$ and $0'(-1) = 0 = 3 \cdot 0(2)$.
 
@@ -137,9 +137,9 @@ Now, suppose $f$ and $g \in X$ then $f+g$ is diff$^n$ and,
 &= 3f(2) + 3g(2) \\
 &= 3(f+g)(2)
 \end{align*}
-Also, if $f \in X$ and $c \in \mathbb{R}$ then $cf$ is diff$^n$ and, $(cf)'(-1) = c f'(-1) = c \cdot 3f(2) = 3(cf)(2)$
+Also, if $f \in X$ and $c \in \RR$ then $cf$ is diff$^n$ and, $(cf)'(-1) = c f'(-1) = c \cdot 3f(2) = 3(cf)(2)$
 
-So, $X$ is indeed a subspace of $\mathbb{R}^{(-4,4)}$.
+So, $X$ is indeed a subspace of $\RR^{(-4,4)}$.
 \end{proof}
 
 \begin{exercise}
@@ -147,7 +147,7 @@ Suppose $b \in \mathbf{R}$. Show that the set of continuous real-valued function
 \end{exercise}
 
 \begin{proof}
-Let $X = \{f : [0,1] \to \mathbb{R} \mid \int_0^1 f = b \text{ and } f \text{ is cont}^n\}$ then, suppose $X$ is a subspace then $0 \in X$
+Let $X = \{f : [0,1] \to \RR \mid \int_0^1 f = b \text{ and } f \text{ is cont}^n\}$ then, suppose $X$ is a subspace then $0 \in X$
 
 Then, $b = \int_0^1 0 = 0$.
 
@@ -155,7 +155,7 @@ Now, suppose $b = 0$ then, it is immediately clear that $0(x) = 0$ is in $X$ as 
 \[
 \int_0^1 (f+g) = \int_0^1 f + \int_0^1 g = 0 + 0 = 0
 \]
-And, if $c \in \mathbb{R}$ then $cf$ is continuous and
+And, if $c \in \RR$ then $cf$ is continuous and
 \[
 \int_0^1 cf = \int_0^1 c \cdot f = c \int_0^1 f = c \cdot 0 = 0
 \]
@@ -167,13 +167,13 @@ Is $\mathbf{R}^2$ a subspace of the complex vector space $\mathbf{C}^2$?
 \end{exercise}
 
 \begin{proof}
-No. Here, $\mathbb{C}^2$ is a complex vector space so the scalars are from $\mathbb{C}$. Now, $(0,1) \in \mathbb{R}^2$ but
+No. Here, $\CC^2$ is a complex vector space so the scalars are from $\CC$. Now, $(0,1) \in \RR^2$ but
 \[
-i(0,1) = (0,i) \notin \mathbb{R}^2
+i(0,1) = (0,i) \notin \RR^2
 \]
-as $i \notin \mathbb{R}$. So, $\mathbb{R}^2$ is not closed under scalar multiplication and hence it is not a subspace of $\mathbb{C}^2$.
+as $i \notin \RR$. So, $\RR^2$ is not closed under scalar multiplication and hence it is not a subspace of $\CC^2$.
 
-Note, if we consider $\mathbb{C}^2$ as a vector space over $\mathbb{R}$ then $\mathbb{R}^2$ is a subspace, as $(0,0) \in \mathbb{R}^2$ and it is closed under addition and under multiplication by real scalars.
+Note, if we consider $\CC^2$ as a vector space over $\RR$ then $\RR^2$ is a subspace, as $(0,0) \in \RR^2$ and it is closed under addition and under multiplication by real scalars.
 \end{proof}
 
 \begin{exercise}
@@ -184,7 +184,7 @@ Note, if we consider $\mathbb{C}^2$ as a vector space over $\mathbb{R}$ then $\m
 \end{exercise}
 
 \begin{proof}
-For (a) let $X = \{(a,b,c) \in \mathbb{R}^3 \mid a^3 = b^3\}$ then we know,
+For (a) let $X = \{(a,b,c) \in \RR^3 \mid a^3 = b^3\}$ then we know,
 \begin{align*}
 & (a - b)(a^2 + ab + b^2) = 0 \\
 & \implies a = b \text{ or } a^2 + ab + b^2 = 0.
@@ -195,7 +195,7 @@ Now, if $a^2 + ab + b^2 = 0$ then
 \]
 as both the terms are non-negative. So, in either case $a = b$. Also, if $a = b$ then clearly $a^3 = b^3$. Thus,
 \[
-X = \{(a,a,c) \in \mathbb{R}^3\}
+X = \{(a,a,c) \in \RR^3\}
 \]
 Now, it is a subspace because $(0,0,0) \in X$
 
@@ -203,11 +203,11 @@ Also, $(a,a,c) + (b,b,d) = (a+b, a+b, c+d) \in X$
 
 and, $k(a,a,c) = (ka, ka, kc) \in X$.
 
-So, $X$ is a subspace of $\mathbb{R}^3$.
+So, $X$ is a subspace of $\RR^3$.
 
-Now, for (b) let $X = \{(a,b,c) \in \mathbb{C}^3 \mid a^3 = b^3\}$
+Now, for (b) let $X = \{(a,b,c) \in \CC^3 \mid a^3 = b^3\}$
 
-Here, $\omega = \frac{-1 + i\sqrt{3}}{2} \in \mathbb{C}$ so that $1 + \omega + \omega^2 = 0$ and $\omega^3 - 1 = (\omega - 1)(\omega^2 + \omega + 1) = 0$, i.e. $\omega^3 = 1$.
+Here, $\omega = \frac{-1 + i\sqrt{3}}{2} \in \CC$ so that $1 + \omega + \omega^2 = 0$ and $\omega^3 - 1 = (\omega - 1)(\omega^2 + \omega + 1) = 0$, i.e. $\omega^3 = 1$.
 
 Then, $(\omega, 1, 0)$ and $(1, 1, 0) \in X$ because
 \[
@@ -218,7 +218,7 @@ But $(\omega, 1, 0) + (1, 1, 0) = (\omega + 1, 2, 0) \notin X$ as,
 (\omega + 1)^3 &= \omega^3 + 1^3 + 3\omega(\omega + 1) = 2 + 3(\omega^2 + \omega) \\
 &= -1 \neq 2^3 = 8
 \end{align*}
-So, $X$ is not closed under addition and hence it is not a subspace of $\mathbb{C}^3$.
+So, $X$ is not closed under addition and hence it is not a subspace of $\CC^3$.
 \end{proof}
 
 \begin{exercise}
@@ -228,7 +228,7 @@ Prove or give a counterexample: If $U$ is a nonempty subset of $\mathbf{R}^2$ su
 \begin{proof}
 The statement is false. For now, consider $U = \{(a, -a) \mid a \in \mathbb{Z}\}$
 
-Clearly, $U \subseteq \mathbb{R}^2$ and $U$ is nonempty as $(0,0) \in U$. Also, if $(a,-a) \in U$ then $-(a,-a) = (-a,a) \in U$ as $-a \in \mathbb{Z}$. And,
+Clearly, $U \subseteq \RR^2$ and $U$ is nonempty as $(0,0) \in U$. Also, if $(a,-a) \in U$ then $-(a,-a) = (-a,a) \in U$ as $-a \in \mathbb{Z}$. And,
 \[
 (a,-a) + (b,-b) = (a+b, -(a+b)) \in U
 \]
@@ -236,7 +236,7 @@ as $a + b \in \mathbb{Z}$. But, $c(a,-a) = (ca, -ca)$ need not be in $U$. For eg
 \[
 \tfrac{1}{2}(1,-1) = \left(\tfrac{1}{2}, -\tfrac{1}{2}\right) \notin U
 \]
-as $\tfrac{1}{2} \notin \mathbb{Z}$. So, $U$ is not closed under scalar multiplication and hence it is not a subspace of $\mathbb{R}^2$.
+as $\tfrac{1}{2} \notin \mathbb{Z}$. So, $U$ is not closed under scalar multiplication and hence it is not a subspace of $\RR^2$.
 \end{proof}
 
 \begin{exercise}
@@ -246,17 +246,17 @@ Give an example of a nonempty subset $U$ of $\mathbf{R}^2$ such that $U$ is clos
 \begin{proof}
 Take the set,
 \[
-U = \{(a,b) \in \mathbb{R}^2 \mid |a| = |b|\}
+U = \{(a,b) \in \RR^2 \mid |a| = |b|\}
 \]
 Here,
 \[
-(0,0) \in U, \text{ and if } (a,b) \in U \text{ and } c \in \mathbb{R} \text{ then } |ca| = |c||a| = |c||b| = |cb|
+(0,0) \in U, \text{ and if } (a,b) \in U \text{ and } c \in \RR \text{ then } |ca| = |c||a| = |c||b| = |cb|
 \]
 so, $(ca, cb) \in U$. But, $U$ is not closed under addition. For eg: $(1,1), (-2,2) \in U$ but
 \[
 (1,1) + (-2,2) = (-1,3) \notin U
 \]
-as $|-1| = 1 \neq 3 = |3|$. So, $U$ is not a subspace of $\mathbb{R}^2$.
+as $|-1| = 1 \neq 3 = |3|$. So, $U$ is not a subspace of $\RR^2$.
 \end{proof}
 
 \begin{exercise}
@@ -264,7 +264,7 @@ A function $f \colon \mathbf{R} \to \mathbf{R}$ is called \defn{periodic} if the
 \end{exercise}
 
 \begin{proof}
-No. Let $P$ be the set of periodic functions from $\mathbb{R}$ to $\mathbb{R}$. Take the functions,
+No. Let $P$ be the set of periodic functions from $\RR$ to $\RR$. Take the functions,
 \[
 f(x) = x \bmod \pi, \quad g(x) = x \bmod 1
 \]
@@ -274,17 +274,17 @@ f(x + \pi) = x + \pi - \pi\left\lfloor \frac{x}{\pi} + 1 \right\rfloor = x + \pi
 \]
 and similarly $g(x+1) = g(x)$, so $f, g \in P$.
 
-We claim $f + g \notin P$. Suppose it is, then there is $p > 0$ s.t $(f+g)(x+p) = (f+g)(x)$ for all $x \in \mathbb{R}$. Now, $(f+g)(0) = 0$ so
+We claim $f + g \notin P$. Suppose it is, then there is $p > 0$ s.t $(f+g)(x+p) = (f+g)(x)$ for all $x \in \RR$. Now, $(f+g)(0) = 0$ so
 \[
 f(p) + g(p) = (f+g)(p) = (f+g)(0) = 0
 \]
 But $f(p) \ge 0$ and $g(p) \ge 0$, so $f(p) = g(p) = 0$. Thus, $p = \pi \lfloor p/\pi \rfloor$ and $p = \lfloor p \rfloor$, i.e. $p = k\pi$ and $p = m$ for some positive integers $k, m$ (as $p > 0$). So,
 \[
-\pi = \frac{m}{k} \in \mathbb{Q}
+\pi = \frac{m}{k} \in \QQ
 \]
 which is a contradiction as $\pi$ is irrational. So, $f + g \notin P$.
 
-Note, $0 \in P$ and $P$ is closed under scalar multiplication (a period of $f$ is also a period of $cf$), so it is only the addition that fails. Thus, $P$ is not a subspace of $\mathbb{R}^{\mathbb{R}}$.
+Note, $0 \in P$ and $P$ is closed under scalar multiplication (a period of $f$ is also a period of $cf$), so it is only the addition that fails. Thus, $P$ is not a subspace of $\RR^{\RR}$.
 \end{proof}
 
 \begin{exercise}
@@ -296,7 +296,7 @@ Since $0 \in V_1$ and $0 \in V_2$ we have $0 \in V_1 \cap V_2$.
 
 Also, if $a, b \in V_1 \cap V_2$ then $a+b \in V_1$ and $a+b \in V_2$ as both are closed under addition, so $a+b \in V_1 \cap V_2$.
 
-Also, if $a \in V_1 \cap V_2$ and $c \in \mathbb{F}$ then $ca \in V_1$ and $ca \in V_2$ as both are closed under scalar multiplication, so $ca \in V_1 \cap V_2$.
+Also, if $a \in V_1 \cap V_2$ and $c \in \FF$ then $ca \in V_1$ and $ca \in V_2$ as both are closed under scalar multiplication, so $ca \in V_1 \cap V_2$.
 
 So, $V_1 \cap V_2$ is a subspace of $V$.
 \end{proof}
@@ -343,7 +343,7 @@ Now, $a+b \in V_1$. Also, $-a+b \in V_1$ because if $-a+b \in V_2$ then
 \]
 which is a contradiction and if $-a+b \in V_3$ then $(-a+b+a) = b \in V_3$ which is a contradiction.
 
-So, $-a+b \in V_1$ and $a+b \in V_1 \implies (-a+b)+(a+b) = 2b \in V_1 \implies b \in V_1$ as $2 \neq 0$ in $\mathbb{F}$. But $b \notin V_1$, a contradiction. So, Case 2 is not possible and we are done.
+So, $-a+b \in V_1$ and $a+b \in V_1 \implies (-a+b)+(a+b) = 2b \in V_1 \implies b \in V_1$ as $2 \neq 0$ in $\FF$. But $b \notin V_1$, a contradiction. So, Case 2 is not possible and we are done.
 \end{proof}
 
 \begin{exercise}
@@ -357,13 +357,13 @@ Describe $U + W$ using symbols, and also give a description of $U + W$ that uses
 \begin{proof}
 Here, as $(x,-x,2x) + (y,y,2y) = (x+y, -x+y, 2(x+y))$ we have
 \[
-U + W = \{(x+y, -x+y, 2(x+y)) \in \mathbb{F}^3 \mid x, y \in \mathbb{F}\}
+U + W = \{(x+y, -x+y, 2(x+y)) \in \FF^3 \mid x, y \in \FF\}
 \]
 Description,
 
 $U + W$ is the set of all vectors with three coordinates whose 3\textsuperscript{rd} coordinate is twice the 1\textsuperscript{st} coordinate.
 
-Now, let $T = \{(a,b,c) \in \mathbb{F}^3 \mid c = 2a\}$. We show $U + W = T$.
+Now, let $T = \{(a,b,c) \in \FF^3 \mid c = 2a\}$. We show $U + W = T$.
 
 Take $(x+y, -x+y, 2(x+y)) \in U + W$, its 3\textsuperscript{rd} coordinate is $2(x+y)$ which is twice the 1\textsuperscript{st}. So, $U + W \subseteq T$.
 
@@ -500,5 +500,27 @@ Thus, the only subspace with an additive inverse is $\{0\}$.
 \end{proof}
 
 \begin{exercise}
-    
+    Suppose
+    \[ U = \set{(x,y,x+y,x-y,2x) \in \FF^5 \mid x,y \in \FF} \]
+    Find a subspace $W$ of $\FF^5$ such that $\FF^5 = U \oplus W$.
 \end{exercise}
+
+\begin{proof}
+    Take $W= \{(0,0,a,b,c) \in \FF^5 \mid a,b,c \mid \FF\}$. Then, it is easy to see that $W$ is a subspace of $\FF^5$. 
+    Set $a=u-x-y,b=v-x+y,c=w-2x$ where $u,v,w,x,y \in \FF$ then,
+    \[ U+W = \set{(x,y,x+y+a,x-y+b,2x+c)} = \set{(x,y,u,v,w)} = \FF^5 \]
+    Thus, $\FF^5 = U + W$.   
+    Now, let $\mathbf{v}= (v_1,v_2,v_3,v_4,v_5) \in \FF$ such that $\mathbf{v} \in U \cap W$ then $v_1=v_2=0$ because $\mathbf{v} \in W$.
+    Since $\mathbf{v} \in U$ that implies \mbox{$v_3= v_1+v_2= 0, v_4 =  v_1-v_2 = 0$}, $v_5=2v_1=0$.
+    Thus, $U \cap W = \set{0}$. Therefore, $\FF^5 = U \oplus W$ via \cref{thm: direct sum iff intersection is zero}.
+\end{proof}
+
+\begin{exercise}
+    Suppose
+    \[ U = \set{(x,y,x+y,x-y,2x) \in \FF^5 \mid x,y \in \FF} \]
+    Find subspaces $W_1,W_2,W_3$ of $\FF^5$ such that $\FF^5 = U \oplus W_1 \oplus W_2 \oplus W_3$.
+\end{exercise}
+
+\begin{proof}
+    
+\end{proof}
