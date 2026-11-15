@@ -545,3 +545,23 @@ Thus, the only subspace with an additive inverse is $\{0\}$.
 
     Similar argument for $V_2 + U$, gives that is also indeed a direct sum.
 \end{proof}
+
+\begin{exercise}
+    Let $V_e$ denote all even real-valued function on $\RR$ and let $V_o$ denote all odd real-valued function on $\RR$.
+    Prove that $\RR^\RR = V_e \oplus V_o$.
+\end{exercise}
+
+\begin{proof}
+    Let 
+    \[ g(x)= \frac{f(x)+f(-x)}{2}, \quad h(x)=\frac{f(x)-f(-x)}{2} \] 
+    for any $f \in \RR^\RR$.
+
+    Notice that if $f(x)$ is a even function then it can be expressed as $g(x)$. Thus,
+    \[ V_e = \set{g(x) \mid f(x) \text{ is even}} \]
+    Similarly, notice that if $f(x)$ is odd function then it can be expressed as $h(x)$. Thus,
+    \[ V_o = \set{h(x) \mid f(x) \text{ is odd}} \]
+    Notice that every real-valued function can be written as $g(x)+h(x)$, thus
+    \[ \RR^\RR = V_e + V_o \]
+    Let $q \in V_e \cap V_o$, then $q(x)=q(-x)=-q(x)$ which implies that $q(x)=0$. Thus, $V_e + V_o$ is a direct sum via 
+    \Cref{thm: direct sum iff intersection is zero}.
+\end{proof}
