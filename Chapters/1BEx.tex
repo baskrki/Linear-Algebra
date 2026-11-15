@@ -462,6 +462,7 @@ Thus, the only subspace with an additive inverse is $\{0\}$.
 \end{proof}
 
 \begin{exercise}
+    \label{ex:1.18}
     Prove or give counterexample: If $V_1,V_2,U$ are subspaces of $V$ such that
     \[ V_1 + U = V_2 + U \]
     then $V_1=V_2$.
@@ -500,13 +501,14 @@ Thus, the only subspace with an additive inverse is $\{0\}$.
 \end{proof}
 
 \begin{exercise}
+    \label{ex:1.20}
     Suppose
     \[ U = \set{(x,y,x+y,x-y,2x) \in \FF^5 \mid x,y \in \FF} \]
     Find a subspace $W$ of $\FF^5$ such that $\FF^5 = U \oplus W$.
 \end{exercise}
 
 \begin{proof}
-    Take $W= \{(0,0,a,b,c) \in \FF^5 \mid a,b,c \mid \FF\}$. Then, it is easy to see that $W$ is a subspace of $\FF^5$. 
+    Take $W= \{(0,0,a,b,c) \in \FF^5 \mid a,b,c \in \FF\}$. Then, it is easy to see that $W$ is a subspace of $\FF^5$. 
     Set $a=u-x-y,b=v-x+y,c=w-2x$ where $u,v,w,x,y \in \FF$ then,
     \[ U+W = \set{(x,y,x+y+a,x-y+b,2x+c)} = \set{(x,y,u,v,w)} = \FF^5 \]
     Thus, $\FF^5 = U + W$.   
@@ -522,5 +524,24 @@ Thus, the only subspace with an additive inverse is $\{0\}$.
 \end{exercise}
 
 \begin{proof}
-    
+    Take the following set,
+    \[ W_1 = \set{(0,0,a,0,0) \mid a \in \FF}, W_2 = \set{(0,0,0,b,0) \mid b \in \FF }, W_3=\{(0,0,0,0,c) \mid c \in \FF \} \]
+    Let $(v_1,v_2,v_3,v_4,v_5) \in W_2 \cap W_3$ then $v_1=v_2=v_3=0$ and $v_4=v_5=0$ because 
+    the element lies in both $W_2$ and $W_3$. Thus, via \Cref{thm: direct sum iff intersection is zero} $W_2+W_3$ is a direct sum.
+
+    We can apply similar logic to see that $W_1 + (W_2+W_3)$ is a direct sum. Notice that subspace $W$ in \Cref{ex:1.20} is exactly $W_1 + W_2 + W_3$, thus we can refer back to see that $\FF^5 = U \oplus W_1 \oplus W_2 \oplus W_3$.
+\end{proof}
+
+\begin{exercise}
+    Prove or give counterexample: If $V_1,V_2,U$ are subspaces of $V$ such that 
+    \[ V_1 \oplus U = V_2 \oplus U \]
+    then $V_1 = V_2$.
+\end{exercise}
+
+\begin{proof}
+    This statement is false. The same counterexample presented in \Cref{ex:1.18} works. To see that if $V_1+U$ is a direct sum,
+    we simply look at $(a,b) \in V_1 \cap U$. Notice that $b = 0$ as $(a,b) \in V_1$ and $a=-b$ since $(a,b) \in U$. Thus, $(a,b)=(0,0)$.
+    Therefore, $V_1 + U$ is a direct sum via \Cref{thm: direct sum iff intersection is zero}.
+
+    Similar argument for $V_2 + U$, gives that is also indeed a direct sum.
 \end{proof}

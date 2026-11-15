@@ -23,7 +23,9 @@
 \newtheorem{example}{Example}[section]
 
 \theoremstyle{aside}
-\newtheorem{exercise}{\textcolor{blue}{Exercise}}[section]     % its own numbering: a separate list
+\newtheorem{exercise}{\textcolor{blue}{Exercise}}[section]
+\crefname{exercise}{\textcolor{ink}{\textsc{exercise}}}{\textcolor{ink}{\textsc{exercises}}}
+\Crefname{exercise}{\textcolor{ink}{\textsc{Exercise}}}{\textcolor{ink}{\textsc{Exercises}}}
 \newtheorem*{remark}{Remark}
 \newtheorem*{notation}{Notation}
 
